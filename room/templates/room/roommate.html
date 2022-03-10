@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+<body>
+    <style>
+        *
+{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+body{
+    margin: 0px;
+    background-color: #E5E5E5;
+}
+header{
+    width: 100%;
+}
+#navbarSupportedContent{
+    margin-top: 10px;
+    margin-left: 30px;
+    margin-bottom: -8px;
+}
+#back{
+    margin-left: 75vw;
+}
+#vitzone{
+    margin-left: 7vw;
+}
+ul{
+    display: flex !important;
+    flex-direction: row !important;
+}
+
+h1{
+    margin-left: 30px;
+    margin-top: 4vw;
+    margin-bottom: 2vw;
+    font-weight: 900;
+}
+.cards{
+    font-weight: 700;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    row-gap: 30px;
+}
+h3{
+    display: inline-flex;
+    min-width: 13vw;
+    font-size: 24px;
+}
+.roomate{
+    flex-basis: 40vw;
+    background: rgba(56, 87, 245, 0.25);
+    border: 9px solid #FFFFFF;
+    border-radius: 33px;
+    min-width: max-content ;
+}
+.rcard-header{
+    padding-left: 0px;
+    z-index: 2;
+}
+.card-body{
+    margin-top: -15px;
+    margin-left: 35px;
+    margin-right: 35px;
+    margin-bottom: 30px;
+    background: #FCFCFC;
+    border-radius: 18px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    font-size: 20px !important;
+}
+.info{
+    padding: 4px;
+    width: 15vw;
+    background: #FFF2F2;
+    border: 2px solid #000000;
+    box-sizing: border-box;
+    border-radius: 30px;
+    display: inline-flex;
+}
+.card{
+    padding-top: 10px;
+    background: rgba(56, 87, 245, 0.25);
+    border: 0px;
+    border-radius: 0px;
+}
+    </style>
+    <header>
+        <nav class="navbar navbar-dark bg-dark">
+            <div id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item" id="home">
+                    <a class="nav-link active" aria-current="page" href="#">HOME</a>
+                  </li>
+                  <li class="nav-item" id="back">
+                    <a class="nav-link active" aria-current="page" href="{% url 'home' %}">BACK</a>
+                  </li>
+                  <li class="nav-item" id="vitzone">
+                    <a class="nav-link active" aria-current="page" href="#">VITZONE</a>
+                  </li>
+                </ul>
+            </div>
+
+          </nav>
+    </header>
+    <main>
+        <h1>ROOMATES :)</h1>
+       {% for i in books %}
+       {%if i.5 == gvnstr and i.6 == block %}
+        <div class="cards">
+            <div class="roomate">
+                <div class="card">
+                    <div class="rcard-header">
+                        <img src="https://github.com/mathavkrishnan/mathavkrishnan.github.io/raw/main/profile.png" alt="" width="70px">
+                    </div>
+                    <div class="card-body">
+                        <h3>NAME</h3> <em class="info" id="name">{{i.3}}</em><br>
+                        <h3>CONTACT NO</h3> <em class="info" id="contact">{{i.2}}</em><br>
+                        <h3>MAIL ID</h3> <em class="info" id="mail">{{i.8}}</em><br>
+                        <h3>ROOM NO</h3> <em class="info" id="room">{{i.4}}</em><br>
+                        <h3>ROOM NO</h3> <em class="info" id="room">{{i.5}}</em><br>
+                        <h3>ROOM NO</h3> <em class="info" id="room">{{i.6}}</em><br>
+                    </div>
+                  </div>
+            </div>
+        </div>
+        {%endif%}
+        {%if i.2 == gvnstr %}
+        <div class="cards">
+            <div class="roomate">
+                <div class="card">
+                    <div class="rcard-header">
+                        <img src="https://github.com/mathavkrishnan/mathavkrishnan.github.io/raw/main/profile.png" alt="" width="70px">
+                    </div>
+                    <div class="card-body">
+                        <h3>NAME</h3> <em class="info" id="name">{{i.3}}</em><br>
+                        <h3>CONTACT NO</h3> <em class="info" id="contact">{{i.2}}</em><br>
+                        <h3>MAIL ID</h3> <em class="info" id="mail">{{i.8}}</em><br>
+                        <h3>ROOM NO</h3> <em class="info" id="room">{{i.4}}</em><br>
+                        <h3>ROOM NO</h3> <em class="info" id="room">{{i.5}}</em><br>
+                        <h3>ROOM NO</h3> <em class="info" id="room">{{i.6}}</em><br>
+                    </div>
+                  </div>
+            </div>
+        </div>
+        {%endif%}
+        {%endfor%}
+    </main>
+    
+</body>
+</html>
